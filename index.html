@@ -1,0 +1,39 @@
+<!DOCTYPE html> <!-- This tells the browser we're using HTML5, the latest version of HTML -->
+<html lang="en"> <!-- The root of our page, "lang='en'" means the page is in English -->
+
+<head>
+    <!-- Meta tags help the browser understand how to handle the page -->
+    <meta charset="UTF-8"> <!-- Sets the character set to UTF-8, which supports most languages -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Makes the page responsive on all devices -->
+    <title>Recipe Finder</title> <!-- The title shown in the browser tab -->
+    <link rel="stylesheet" href="styles.css"> <!-- Links to our CSS file for styling -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Imports the Poppins font from Google -->
+</head>
+
+<body> <!-- Everything visible on the page goes inside the body -->
+    <div class="container"> <!-- A container to hold and center all our content -->
+        <h1>Recipe Finder</h1> <!-- The big title at the top of the page -->
+        <div class="search-section"> <!-- A section for the search bar, button, and toggle -->
+            <!-- Input field where your friend can type ingredients -->
+            <input type="text" id="ingredientInput" placeholder="Enter ingredients (e.g., chicken, rice)">
+            <!-- Button to start the search, calls the searchRecipes() function when clicked -->
+            <button onclick="searchRecipes()">Search</button>
+            <div class="toggle-switch"> <!-- A toggle to switch between veg and non-veg recipes -->
+                <span>Non-Veg</span> <!-- Label for non-vegetarian option -->
+                <label class="switch"> <!-- The toggle switch itself -->
+                    <!-- Checkbox that triggers toggleDiet() when clicked -->
+                    <input type="checkbox" id="vegToggle" onchange="toggleDiet()">
+                    <span class="slider"></span> <!-- The visual slider that moves -->
+                </label>
+                <span>Veg</span> <!-- Label for vegetarian option -->
+            </div>
+        </div>
+        <!-- Empty div where recipe cards will appear after the search -->
+        <div id="recipeResults" class="recipe-grid"></div>
+    </div>
+    <script src="script.js"></script> <!-- Links to our JavaScript file for functionality -->
+</body>
+
+</html>

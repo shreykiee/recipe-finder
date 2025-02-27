@@ -1,0 +1,308 @@
+/* This styles the entire page */
+body {
+    font-family: 'Poppins', sans-serif;
+    /* Uses the Poppins font we imported */
+    background: linear-gradient(135deg, #ece9e6 0%, #ffffff 100%);
+    /* A smooth gradient background */
+    margin: 0;
+    /* Removes default spacing around the edges */
+    padding: 40px;
+    /* Adds some space inside the edges */
+    min-height: 100vh;
+    /* Ensures the background covers the full height of the screen */
+}
+
+/* Centers and limits the width of our content */
+.container {
+    max-width: 1100px;
+    /* Keeps the content from getting too wide */
+    margin: 0 auto;
+    /* Centers the container horizontally */
+    text-align: center;
+    /* Centers all text inside */
+}
+
+/* Styles the main title */
+h1 {
+    font-size: 2.8em;
+    /* Makes the title big */
+    color: #1a3c34;
+    /* Sets a dark teal color */
+    margin-bottom: 40px;
+    /* Adds space below the title */
+    letter-spacing: 1px;
+    /* Slightly spreads out the letters */
+}
+
+/* Styles the search section (input, button, toggle) */
+.search-section {
+    display: flex;
+    /* Arranges items side by side */
+    align-items: center;
+    /* Vertically centers the items */
+    justify-content: center;
+    /* Horizontally centers the items */
+    gap: 20px;
+    /* Adds space between items */
+    margin-bottom: 50px;
+    /* Space below the section */
+    flex-wrap: wrap;
+    /* Allows wrapping on small screens */
+    background: rgba(255, 255, 255, 0.9);
+    /* Slightly transparent white background */
+    padding: 20px;
+    /* Space inside the section */
+    border-radius: 30px;
+    /* Rounds the corners */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    /* Adds a subtle shadow */
+}
+
+/* Styles the input field */
+#ingredientInput {
+    padding: 14px 25px;
+    /* Adds space inside the input */
+    width: 350px;
+    /* Sets a fixed width */
+    font-size: 16px;
+    /* Size of the text inside */
+    border: none;
+    /* Removes the default border */
+    border-radius: 30px;
+    /* Rounds the corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    /* Adds a light shadow */
+    outline: none;
+    /* Removes the outline when clicked */
+    transition: all 0.3s ease;
+    /* Smoothly changes styles when focused */
+}
+
+/* Changes the input's shadow when clicked */
+#ingredientInput:focus {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    /* Bigger shadow when typing */
+}
+
+/* Styles the search button */
+button {
+    padding: 14px 35px;
+    /* Space inside the button */
+    background: #16a085;
+    /* Teal background color */
+    color: white;
+    /* White text */
+    border: none;
+    /* No border */
+    border-radius: 30px;
+    /* Rounded corners */
+    font-size: 16px;
+    /* Text size */
+    font-weight: 600;
+    /* Slightly bold text */
+    cursor: pointer;
+    /* Hand icon on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    /* Shadow for depth */
+    transition: all 0.3s ease;
+    /* Smooth hover effects */
+}
+
+/* Changes button style when hovered over */
+button:hover {
+    background: #138d75;
+    /* Darker teal */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    /* Bigger shadow */
+}
+
+/* Styles the toggle switch section */
+.toggle-switch {
+    display: flex;
+    /* Side-by-side layout */
+    align-items: center;
+    /* Vertically centers items */
+    gap: 12px;
+    /* Space between items */
+    font-size: 14px;
+    /* Text size */
+    color: #34495e;
+    /* Dark gray text */
+    font-weight: 600;
+    /* Slightly bold text */
+}
+
+/* The toggle switch container */
+.switch {
+    position: relative;
+    /* Allows positioning of the slider */
+    display: inline-block;
+    /* Keeps it inline */
+    width: 60px;
+    /* Width of the switch */
+    height: 28px;
+    /* Height of the switch */
+}
+
+/* Hides the actual checkbox */
+.switch input {
+    opacity: 0;
+    /* Makes it invisible */
+    width: 0;
+    /* Takes up no space */
+    height: 0;
+    /* Takes up no space */
+}
+
+/* The gray background of the slider */
+.slider {
+    position: absolute;
+    /* Stays in place */
+    cursor: pointer;
+    /* Hand icon on hover */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* Fills the switch area */
+    background-color: #bdc3c7;
+    /* Gray when off */
+    transition: 0.4s;
+    /* Smooth color change */
+    border-radius: 28px;
+    /* Rounded edges */
+}
+
+/* The white circle inside the slider */
+.slider:before {
+    position: absolute;
+    /* Positioned within the slider */
+    content: "";
+    /* Empty content for the circle */
+    height: 22px;
+    /* Circle height */
+    width: 22px;
+    /* Circle width */
+    left: 3px;
+    /* Starts on the left */
+    bottom: 3px;
+    /* Slightly above the bottom */
+    background-color: white;
+    /* White circle */
+    transition: 0.4s;
+    /* Smooth movement */
+    border-radius: 50%;
+    /* Makes it a circle */
+}
+
+/* When the checkbox is checked, turn the slider green */
+input:checked+.slider {
+    background-color: #27ae60;
+    /* Green for "on" */
+}
+
+/* Move the circle to the right when checked */
+input:checked+.slider:before {
+    transform: translateX(32px);
+    /* Moves the circle 32px right */
+}
+
+/* The grid where recipe cards will appear */
+.recipe-grid {
+    display: grid;
+    /* Uses a grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    /* Auto-adjusts columns */
+    gap: 25px;
+    /* Space between cards */
+    padding: 20px;
+    /* Space around the grid */
+}
+
+/* Each recipe card */
+.recipe-card {
+    background: white;
+    /* White background */
+    border-radius: 20px;
+    /* Rounded corners */
+    overflow: hidden;
+    /* Clips content that overflows */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    /* Shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Smooth hover effects */
+    display: flex;
+    /* Flex layout for image and content */
+    flex-direction: column;
+    /* Stacks items vertically */
+}
+
+/* Hover effect for recipe cards */
+.recipe-card:hover {
+    transform: translateY(-8px);
+    /* Lifts the card up */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    /* Bigger shadow */
+}
+
+/* Styles the recipe image */
+.recipe-card img {
+    width: 100%;
+    /* Full width of the card */
+    height: 200px;
+    /* Fixed height */
+    object-fit: cover;
+    /* Crops image to fit */
+    border-bottom: 4px solid #16a085;
+    /* Teal border below */
+}
+
+/* The text area of the recipe card */
+.recipe-card .content {
+    padding: 20px;
+    /* Space inside */
+    flex-grow: 1;
+    /* Takes up available space */
+}
+
+/* Recipe title */
+.recipe-card h3 {
+    margin: 0 0 15px;
+    /* Space below the title */
+    font-size: 1.2em;
+    /* Slightly larger text */
+    color: #1a3c34;
+    /* Dark teal color */
+    font-weight: 600;
+    /* Bold text */
+}
+
+/* Removes default list styling */
+.recipe-card ul {
+    list-style: none;
+    /* No bullets */
+    padding: 0;
+    /* No padding */
+    margin: 0;
+    /* No margin */
+}
+
+/* Each ingredient item */
+.recipe-card li {
+    font-size: 0.95em;
+    /* Slightly smaller text */
+    margin: 5px 0;
+    /* Space between items */
+}
+
+/* Ingredients we have */
+.recipe-card .used {
+    color: #27ae60;
+    /* Green for used ingredients */
+}
+
+/* Ingredients we're missing */
+.recipe-card .missed {
+    color: #000000;
+    /* Black for missed ingredients */
+}
