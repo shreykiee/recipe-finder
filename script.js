@@ -25,8 +25,8 @@ async function searchRecipes() {
         ingredients += ", vegetarian, veg";
     }
 
-    // Build the API URL with our key, ingredients, and a limit of 5 recipes
-    const url = `https://api.spoonacular.com/recipes/findByIngredients?apiKey=${apiKey}&ingredients=${ingredients}&number=5`;
+    // Build the API URL with our key, ingredients, and a limit of 20 recipes
+    const url = `https://api.spoonacular.com/recipes/findByIngredients?apiKey=${apiKey}&ingredients=${ingredients}&number=20`;
 
     // Try to get data from the API
     try {
